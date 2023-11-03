@@ -5,10 +5,20 @@
 // platforms in the `pubspec.yaml` at
 // https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms.
 
-import 'flutter_ecommpay_core_ios_platform_interface.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_ecommpay_core_platform_interface/flutter_ecommpay_core_platform_interface_platform_interface.dart';
 
-class FlutterEcommpayCoreIos {
-  Future<String?> getPlatformVersion() {
-    return FlutterEcommpayCoreIosPlatform.instance.getPlatformVersion();
+class FlutterEcommpayCoreIos extends FlutterEcommpayCorePlatform {
+  static const _methodChannel = MethodChannel('flutter_ecommpay_core_ios');
+
+  static void registerWith() {
+    FlutterEcommpayCorePlatform.instance = FlutterEcommpayCoreIos();
+  }
+
+  @override
+  Future<String?> getPlatformVersion() async {
+    final version =
+        await _methodChannel.invokeMethod<String>('getPlatformVersion');
+    return version;
   }
 }
