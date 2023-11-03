@@ -6,7 +6,7 @@
 // https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms.
 
 import 'package:flutter/services.dart';
-import 'package:flutter_ecommpay_core_platform_interface/flutter_ecommpay_core_platform_interface_platform_interface.dart';
+import 'package:flutter_ecommpay_core_platform_interface/flutter_ecommpay_core_platform_interface.dart';
 
 class FlutterEcommpayCoreIos extends FlutterEcommpayCorePlatform {
   static const _methodChannel = MethodChannel('flutter_ecommpay_core_ios');
