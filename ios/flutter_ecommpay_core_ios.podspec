@@ -3,6 +3,7 @@
 # Run `pod lib lint flutter_ecommpay_core_ios.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
+  s.static_framework = true
   s.name             = 'flutter_ecommpay_core_ios'
   s.version          = '0.0.1'
   s.summary          = 'A new Flutter plugin project.'
